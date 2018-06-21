@@ -1,1 +1,1 @@
-# django_library_test
+# local_library_test

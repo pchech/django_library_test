@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Book List</h1>
+	<br>
+	<a href="{% url 'book_create' %}">Add Book</a>
+	<br>
+
+    {% if book_list %}
+    <ul>
+		<table>
+      {% for book in book_list %}
+      <tr>
+        <td><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})</td><td width="200" align="middle"><a href="{% url 'book_update' book.pk%}">Update</a></td><td><a href="{% url 'book_delete' book.pk%}">Delete</a></td>
+      <tr>
+      {% endfor %}
+</table>
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}       
+{% endblock %}
