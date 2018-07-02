@@ -1,1 +1,10 @@
 python_version = "3.6.5"
+
+[packages]
+django = "*"
+gunicorn = "*"
+dj-database-url = "*"
+django-heroku = "*"
+"psycopg2" = "*"
+wheel = "*"
+whitenoise = "*"
