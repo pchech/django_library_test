@@ -187,6 +187,11 @@ def split_calc(request):
 			a=[[0] * 2 for i in range(s)]
 			form=SplitCalcForm(request.POST,tk_cnt=request.session['tk_cnt']+1)
 			request.session['tk_cnt']+=1
+		elif 'delete_tk' in request.POST:
+			s=0
+			a=[[0] * 2 for i in range(s)]
+			form=SplitCalcForm(request.POST,tk_cnt=request.session['tk_cnt']-1)
+			request.session['tk_cnt']-=1
 	else:
 		s=0
 		a = [[0] * 2 for i in range(s)]
