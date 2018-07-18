@@ -10,8 +10,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <!-- Добавление дополнительного статического CSS файла -->
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
@@ -22,6 +22,7 @@
       <div class="col-sm-2">
       {% block sidebar %}
       <ul class="sidebar-nav">
+		  <li><a href="{% url 'split' %}">Splits</a></li>
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'books' %}">All books</a></li>
           <li><a href="{% url 'author' %}">All authors</a></li><br>
